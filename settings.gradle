@@ -1,1 +1,3 @@
 rootProject.name = 'learning-java'
+include 'learning-testing'
+
