@@ -1,7 +1,6 @@
 package com.learning.testing.shape;
 
 import org.junit.jupiter.api.*;
-
 import java.util.Arrays;
 
 @DisplayName("TDD: Forum Test Suite")
@@ -90,7 +89,5 @@ public class ShapeCollectorTestSuite {
             //Then
             Assertions.assertEquals(result, expectedResult);
         }
-
     }
-
 }
