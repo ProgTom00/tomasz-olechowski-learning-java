@@ -20,6 +20,5 @@ final public class People {
         theList.add("Martin Valenzuela");
 
         return new ArrayList<>(theList);
-
     }
 }
