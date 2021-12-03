@@ -11,7 +11,6 @@ public final class ForumUser {
     private final int postPublished;
 
     public ForumUser(int userId, String nameUser, char sex, LocalDate dateOfBirth, int postPublished) {
-
         this.userId = userId;
         this.nameUser = nameUser;
         this.sex = sex;

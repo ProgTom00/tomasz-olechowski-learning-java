@@ -31,7 +31,7 @@ public class StreamMain {
 //        People.getList().stream()
 //                .filter(s -> s.length() > 11)
 //                .forEach(System.out::println);
-//
+
 //        People.getList().stream()
 //                .map(String::toUpperCase)
 //                .filter(s -> s.length() > 11)
