@@ -1,4 +1,5 @@
 rootProject.name = 'learning-java'
 include 'learning-testing'
 include 'learning-stream'
+include 'simplegame-rps'
 
