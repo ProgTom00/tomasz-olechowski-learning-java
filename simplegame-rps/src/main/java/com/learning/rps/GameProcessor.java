@@ -16,30 +16,29 @@ public class GameProcessor {
         this.countWinningRounds = countWinningRounds;
     }
 
-
     public static void startGame() {
         Player player1;
         Player player2;
         GameMenu.introduction();
 
-        playerOption = GameMenu.getTypeOfGame();
+        playerOption = IOService.getTypeOfGame();
         switch (playerOption) {
             case 1: // human vs computer
-                player1 = new HumanPlayer(GameMenu.getPlayerName());
-                player2 = new ComputerPlayer("Computer");
+                player1 = new HumanPlayer(IOService.getPlayerName());
+                player2 = new ComputerPlayer();
                 break;
             case 2: // Computer vs Computer2
                 player1 = new ComputerPlayer("Computer");
                 player2 = new ComputerPlayer("Computer");
                 break;
             case 3: // Human vs Human
-                player1 = new HumanPlayer(GameMenu.getPlayerName());
-                player2 = new HumanPlayer(GameMenu.getPlayerName());
+                player1 = new HumanPlayer(IOService.getPlayerName());
+                player2 = new HumanPlayer(IOService.getPlayerName());
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + playerOption);
         }
-        int rounds = GameMenu.setGamesRounds();
+        int rounds = IOService.setGamesRounds();
         Rules rules = new RulesOfTheGame();
         GameProcessor gameProcessor = new GameProcessor(player1, player2, rules, rounds);
         gameProcessor.progressGame();
@@ -70,7 +69,7 @@ public class GameProcessor {
             }
         }
         GameMenu.checkGameWinner(player1, player2);
-        GameMenu.finishGame();
+        IOService.finishGame();
     }
 }
 

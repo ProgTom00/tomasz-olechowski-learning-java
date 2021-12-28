@@ -1,10 +1,10 @@
 package com.learning.rps;
 
-import java.util.Random;
+import java.util.*;
 
 public class ComputerPlayer extends Player {
-    private final Random random = new Random();
 
+    private static final Random random = new Random();
 
     public ComputerPlayer() {
         super("Computer");
@@ -15,7 +15,7 @@ public class ComputerPlayer extends Player {
     }
 
     public int executeMove() {
-        return GameMenu.executeComputerMove(random.nextInt(5), this);
+        return IOService.executeComputerMove(random.nextInt(5), this);
     }
 
     @Override
@@ -23,104 +23,81 @@ public class ComputerPlayer extends Player {
 
         int computerChoice = -1;
 
-        boolean isWin = Math.random() >= 0.5;
-        boolean isLoose = Math.random() <= 0.25;
-        boolean isDraw = Math.random() <= 0.25;
+        boolean win = Math.random() >= 0.5;
+        boolean loose = Math.random() <= 0.25;
 
-        int[] winningArray;
-        int[] loosingArray;
-        int rndChoice;
 
         switch (humanChoice) {
             case 1:
-                if (isWin) {
-                    winningArray = new int[]{2, 5};
-                    rndChoice = random.nextInt(winningArray.length);
-                    computerChoice = winningArray[rndChoice];
+                if (win) {
+                    computerChoice = getComputerChoice(2, 5);
                     break;
-                } else if (isLoose) {
-                    loosingArray = new int[]{3, 4};
-                    rndChoice = random.nextInt(loosingArray.length);
-                    computerChoice = loosingArray[rndChoice];
+                } else if (loose) {
+                    computerChoice = getComputerChoice(3, 4);
                     break;
                 } else {
-                    if (isDraw) {
-                        computerChoice = 1;
-                        break;
-                    }
+                    computerChoice = 1;
+                    break;
                 }
             case 2:
-                if (isWin) {
-                    winningArray = new int[]{3, 4};
-                    rndChoice = random.nextInt(winningArray.length);
-                    computerChoice = winningArray[rndChoice];
+                if (win) {
+                    computerChoice = getComputerChoice(3, 4);
                     break;
-
-                } else if (isLoose) {
-                    loosingArray = new int[]{1, 5};
-                    rndChoice = random.nextInt(loosingArray.length);
-                    computerChoice = loosingArray[rndChoice];
+                } else if (loose) {
+                    computerChoice = getComputerChoice(1, 5);
                     break;
                 } else {
-                    if (isDraw) {
-                        computerChoice = 2;
-                        break;
-                    }
+                    computerChoice = 2;
+                    break;
                 }
             case 3:
-                if (isWin) {
-                    winningArray = new int[]{1, 5};
-                    rndChoice = random.nextInt(winningArray.length);
-                    computerChoice = winningArray[rndChoice];
+                if (win) {
+                    computerChoice = getComputerChoice(1, 5);
                     break;
-
-                } else if (isLoose) {
-                    loosingArray = new int[]{2, 4};
-                    rndChoice = random.nextInt(loosingArray.length);
-                    computerChoice = loosingArray[rndChoice];
+                } else if (loose) {
+                    computerChoice = getComputerChoice(2, 4);
                     break;
                 } else {
-                    if (isDraw) {
-                        computerChoice = 3;
-                        break;
-                    }
+                    computerChoice = 3;
+                    break;
                 }
             case 4:
-                if (isWin) {
-                    winningArray = new int[]{1, 3};
-                    rndChoice = random.nextInt(winningArray.length);
-                    computerChoice = winningArray[rndChoice];
+                if (win) {
+                    computerChoice = getComputerChoice(1, 3);
                     break;
-                } else if (isLoose) {
-                    loosingArray = new int[]{2, 5};
-                    rndChoice = random.nextInt(loosingArray.length);
-                    computerChoice = loosingArray[rndChoice];
+                } else if (loose) {
+                    computerChoice = getComputerChoice(2, 5);
                     break;
                 } else {
-                    if (isDraw) {
-                        computerChoice = 4;
-                        break;
-                    }
+                    computerChoice = 4;
+                    break;
                 }
             case 5:
-                if (isWin) {
-                    winningArray = new int[]{2, 4};
-                    rndChoice = random.nextInt(winningArray.length);
-                    computerChoice = winningArray[rndChoice];
+                if (win) {
+                    computerChoice = getComputerChoice(2, 4);
                     break;
-                } else if (isLoose) {
-                    loosingArray = new int[]{1, 3};
-                    rndChoice = random.nextInt(loosingArray.length);
-                    computerChoice = loosingArray[rndChoice];
+                } else if (loose) {
+                    computerChoice = getComputerChoice(1, 3);
                     break;
                 } else {
-                    if (isDraw) {
-                        computerChoice = 5;
-                        break;
-                    }
+                    computerChoice = 5;
+                    break;
                 }
         }
-        GameMenu.executeComputerMove(computerChoice, this);
+
+        IOService.executeComputerMove(computerChoice, this);
         return computerChoice;
+    }
+
+    public static int getComputerChoice(int firstComputerChoice, int secondComputerChoice) {
+
+        int rndChoice = 0;
+        int computerChoice = -1;
+        List<Integer> list = List.of(firstComputerChoice, secondComputerChoice);
+        rndChoice = random.nextInt(list.size());
+        computerChoice = list.get(rndChoice);
+
+        return computerChoice;
+
     }
 }

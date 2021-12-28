@@ -8,7 +8,7 @@ public class HumanPlayer extends Player {
 
     @Override
     public int executeMove() {
-        return GameMenu.executeHumanPlayerMove(this);
+        return IOService.executeHumanPlayerMove(this);
     }
 
     @Override

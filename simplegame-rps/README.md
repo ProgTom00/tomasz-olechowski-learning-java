@@ -32,13 +32,16 @@ When you pick 'demo' version, you just need to enter the number of rounds. When 
 the game will ask for names for the players.
 
 ## Game rules
-After selecting the game option, in the next step the game will ask for the number of winning rounds. 
-To win the game winning rounds must be achieved by one of the players. When you have chosen first mode
-human vs computer. You will be the first player which starts the game. You have 5 options available options:
-1-rock, 2-paper, 3-scissors, 4-lizard, 5-spock. Although, you can start a new game by pressing 'n', or you can end
-session with key 'x'. If you enter wrong values an error will appear, and you will have to re-enter the option. However,
-when you choose first option in the game mode computer have enhanced move. It means that computer has 50% chance in case
-of winning, 25 % chance of draw and 25% chance of losing with you.
+After selecting the game option, the game will ask for the name of player(if you choose 1 option), 
+players(if you choose 3 option). the name must have at least one character. In the next step the game will ask for 
+the number of winning rounds. In the game you can play up to 20 winning rounds. If you enter the number above 20, 
+or you will use an illegal character the game will ask to enter a proper number. To win the game winning rounds must be
+achieved by one of the players. When you have chosen first mode human vs computer. You will be the first player which 
+starts the game. You have 5 options available options:1-rock, 2-paper, 3-scissors, 4-lizard, 5-spock. Although, you can
+start a new game by pressing 'n', or you can end session with key 'x'. If you enter wrong values an error will appear, 
+and you will have to re-enter the option. However, when you choose first option in the game mode computer have 
+enhanced move. It means that computer has 50% chance in case of winning, 25 % chance of draw and 25% chance of 
+losing with you.
 
 * Rock crushes Scissors
 * Scissors cuts Paper
@@ -57,9 +60,6 @@ and the score of the players will be unchanged. The game will be continued until
 reach the point equality to the winning rounds. A message will be displayed at end of the game with present score
 and who won the game. After that message you have two options to choose 'x' to exit game or 'n' to start a new game, 
 and you need to use lower case letters.
-
-                    
-
 
 ## Technologies
 Project is created with:

@@ -2,8 +2,8 @@ package com.learning.rps;
 
 public class GameGesture {
 
-
     public static void gameGestures(int option) {
+
         switch (option) {
             case 1:
                 System.out.println("Rock crushes Scissors");
@@ -37,7 +37,7 @@ public class GameGesture {
                 break;
             default:
                 System.out.println("It's a tie!");
+                break;
         }
     }
-
 }
