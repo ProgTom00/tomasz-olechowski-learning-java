@@ -3,4 +3,5 @@ include 'learning-testing'
 include 'learning-stream'
 include 'simplegame-rps'
 include 'exceptions'
+include 'patterns'
 
