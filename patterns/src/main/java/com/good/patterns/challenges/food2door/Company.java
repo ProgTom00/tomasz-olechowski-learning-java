@@ -25,7 +25,7 @@ public class Company {
             for (Shop request2 : orderRequest.getOrderList()) {
                 if (order.getProduct().getProductName().equals(request2.getProduct().getProductName())) {
                     if (order.getQuantity() < request2.getQuantity()) {
-                        System.out.println("Cannot realize the order, not enought products in stock");
+                        System.out.println("Cannot realize the order, not enough products in stock");
                     } else {
                         int amountStock = order.getQuantity() - request2.getQuantity();
                         double amountToPay = request2.getProduct().getPrice() * request2.getQuantity();
