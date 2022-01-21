@@ -5,4 +5,5 @@ include 'simplegame-rps'
 include 'exceptions'
 include 'patterns'
 include 'patterns2'
+include 'jdbc'
 
